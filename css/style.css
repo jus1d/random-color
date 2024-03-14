@@ -3,7 +3,6 @@
 *{
     font-family: 'SF Pro Display', sans-serif;
     box-sizing: border-box;
-    --bs-body-bg: #000000;
     margin: 0;
     padding: 0;
 }
@@ -11,6 +10,7 @@
 html, body{
     height: 100%;
     width: 100%;
+    background-color: #000000;
 }
 
 p{
@@ -26,23 +26,32 @@ span{
     color: rgb(255, 177, 245);
 }
 
-.block-menu{
+img{
+    width: 100%;
+}
+
+.row{
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+.block-menu{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
 .output{
-    width: 600px;
     display: flex;
     justify-content: center;
+    width: 600px;
     border-radius: 15px;
     border: 5px solid white;
-    background-color: rgba(0,0,0,0);
-    opacity: 50%;
+    opacity: 75%;
+    margin-bottom: 15px;
     transition: opacity 0.5s;
-    margin: 25px;
+    background-color: #000000;
 }
 
 .output:hover{
@@ -50,7 +59,14 @@ span{
     transition: opacity 0.5s;
 }
 
-.button button{
+.block-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-button button{
+    display: flex;
+    justify-content: center;
     width: 200px;
     font-size: 30px;
     font-weight: 500;
@@ -58,22 +74,22 @@ span{
     padding: 10px;
     border: 5px solid white;
     color: white;
-    background-color: rgba(0,0,0,0);
-    opacity: 50%;
-    transition: transform 0.5s, opacity 0.5s;;
+    opacity: 75%;
+    transition: transform 0.5s, opacity 0.5s;
+    background-color: #000000;
 }
 
-.button button:hover, 
-.button button:focus{
+.block-button button:hover{
     opacity: 100%;
     transform: scale(105%);
     transition: transform 0.5s, opacity 0.5s;
 }
 
-.button button:active,
-.output:active{
-    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
+.button-link button, .button-back button{
+    width: 80px;
 }
+
+
 @media screen and (min-width: 360px) and (max-width: 491px){
     p{
         font-size: 40px;
@@ -84,7 +100,7 @@ span{
     .output{
         width: 300px;
     }
-    .button button{
+    .button-change-color button{
         font-size: 25px;
     }
 }
@@ -99,7 +115,7 @@ span{
     .output{
         width: 450px;
     }
-    .button button{
+    .button-change-color button{
         font-size: 35px;
     }
 }
